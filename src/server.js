@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 const { generateFakeData } = require('../faker');
 const { generateFake2Data } = require('../faker2');
 
-const MONGO_URI = 'mongodb+srv://gyuho:VxLnXbHkSVsfIlCF@mongodbtutorial.pllpevu.mongodb.net/blogService?retryWrites=true&w=majority&appName=MongoDBTutorial';
-
 const server = async() => {
     try {
+        const { MONGO_URI } = process.env;
+        if(!MONGO_URI) throw new Error("MONGO_URI is required!!");
+
         await mongoose.connect(MONGO_URI);
 
         mongoose.set({ debug:true });
