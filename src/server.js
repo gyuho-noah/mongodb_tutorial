@@ -18,7 +18,7 @@ const server = async() => {
         app.use('/user', userRouter);
         app.use('/blog', blogRouter);
         app.listen(PORT, async () => {
-            console.log(`server listening on p[ort ${PORT}`);
+            console.log(`server listening on port ${PORT}`);
             // await generateFakeData(1000000, 5, 20);
             // for(let i=0; i<20; i++) {
             //     await generateFake2Data(10, 2, 10);
